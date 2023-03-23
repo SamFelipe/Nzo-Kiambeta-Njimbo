@@ -10,13 +10,13 @@ body {
 
 /* CUSTOMIZE THE CAROUSEL */
 #img-1 {
-  background-image: url(media/carrosel/mascara.JPG);
+  background-image: url(/media/carrosel/mascara.JPG);
 }
 #img-2 {
- background-image: url(media/carrosel/capoeira.JPG);
+ background-image: url(/media/carrosel/capoeira.JPG);
 }
 #img-3 {
-  background-image: url(media/carrosel/buzios.JPG);
+  background-image: url(/media/carrosel/buzios.JPG);
 }
 
 .bd-placeholder-img {
