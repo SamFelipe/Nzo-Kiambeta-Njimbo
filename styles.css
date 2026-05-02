@@ -20,6 +20,9 @@
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body {
+  background-color: #f5f1e8 !important;
+}
 body {
   margin: 0;
   background: var(--bg);
