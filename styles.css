@@ -326,10 +326,69 @@ figure { margin: 0; }
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .meta-bar, .masthead, .section { padding-left: 24px; padding-right: 24px; }
-  .site-footer { grid-template-columns: 1fr 1fr; padding: 32px 24px; gap: 24px; }
-  .site-footer-bottom { padding: 16px 24px; }
-  .nav { gap: 16px; font-size: 12px; }
+  .meta-bar, .masthead, .section { padding-left: 20px !important; padding-right: 20px !important; }
+  .meta-bar { font-size: 10px; gap: 6px 14px; }
+  .masthead { padding-top: 24px; padding-bottom: 20px; }
+  .masthead h1, h1.wordmark { font-size: clamp(34px, 9vw, 44px) !important; }
+  .nav { gap: 14px 18px; font-size: 12px; flex-wrap: wrap; }
+  .site-footer { grid-template-columns: 1fr 1fr; padding: 32px 20px; gap: 24px; }
+  .site-footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+
+  /* Force ALL grids inside sections to single column on mobile */
+  .section > div[style*="grid-template-columns"],
+  .section[style*="grid-template-columns"],
+  main section > div[style*="grid"] {
+    display: block !important;
+  }
+  .section > div[style*="grid"] > * { margin-bottom: 24px; }
+  main section { display: block !important; }
+
+  /* Multi-column text → single col */
+  .apresentacao-cols, [style*="column-count"] {
+    column-count: 1 !important;
+  }
+
+  /* Drop cap smaller and contained */
+  .dropcap::first-letter,
+  p.dropcap::first-letter {
+    font-size: 64px !important;
+    line-height: 0.85 !important;
+    margin-right: 8px !important;
+  }
+
+  /* Display headings — keep readable, never gigantic */
+  .display-h.xl { font-size: clamp(34px, 8vw, 48px) !important; line-height: 1.05 !important; }
+  .display-h.lg { font-size: clamp(28px, 7vw, 40px) !important; line-height: 1.1 !important; }
+  .display-h.md { font-size: clamp(22px, 5.5vw, 30px) !important; line-height: 1.15 !important; }
+  .display-h.sm { font-size: 18px !important; }
+
+  /* Image frames — shrink aspect to not eat entire screen */
+  .img-frame { aspect-ratio: 4/3 !important; }
+
+  /* Frentes / cards stacks */
+  .frentes-grid { grid-template-columns: 1fr !important; }
+  .frente { border-right: none !important; border-bottom: 1px solid var(--ink); padding: 24px 0 !important; }
+  .frente:last-child { border-bottom: none; }
+
+  /* Nkisis list */
+  .nkisi-row { grid-template-columns: 1fr !important; gap: 8px !important; padding: 20px 0 !important; }
+  .nk-num { padding-top: 0 !important; }
+
+  /* Forms / inputs full width */
+  .form-card { padding: 20px !important; }
+
+  /* Lightbox controls easier to tap */
+  .lightbox { padding: 16px; }
+  .lightbox-close, .lightbox-nav { width: 40px; height: 40px; }
+
+  /* WhatsApp FAB doesn't overlap content too much */
+  .wpp-fab { right: 16px; bottom: 16px; }
+}
+
+@media (max-width: 480px) {
+  .site-footer { grid-template-columns: 1fr; }
+  .nav { gap: 12px 16px; font-size: 11px; }
+  .meta-bar { font-size: 9.5px; }
 }
 
 /* ─── Lightbox ─── */
